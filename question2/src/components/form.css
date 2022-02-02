@@ -66,3 +66,14 @@ input {
 .side-by-side div:last-child input {
   width: 100%;
 }
+
+input[type="date"] {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: flex;
+  margin-left: 0;
+  padding-right: 1.2em;
+}
