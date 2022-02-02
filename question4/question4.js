@@ -39,7 +39,8 @@ server_echo.forEach(
 // are preferred to avoid scoping related bugs
 
 // 2. On line 21, response.json().echo will return undefined since the original json we sent does not have an echo
-// property. Therefore line 30 will throw an error since we cant iterate over undefined. 
+// property. Therefore line 30 will throw an error since we cant iterate over undefined. Also, because of this,
+// line 22 will also throw an error because the promise has already been resolved in line 21. 
 
 
 
