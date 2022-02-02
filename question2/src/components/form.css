@@ -1,5 +1,5 @@
 form {
-  border: white 1px solid;
+  /* border: #fefeff 1px solid; */
   padding: 0.75em 1.5em;
   width: 526px;
   height: 544px;
@@ -7,7 +7,11 @@ form {
 
 input, textarea {
   background-color: transparent;
-  border: white 1px solid;
+  border: #fefeff 1px solid;
+  color: #fefeff;
+  font-size: 1em;
+  outline: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 textarea {
@@ -15,18 +19,25 @@ textarea {
   resize: none;
 }
 
+textarea::placeholder {
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+  color: #6ca2e6;
+}
+
 input, label {
   display: block;
 }
 
 label {
-  padding: 0 0.5em 0.5em 0;
+  padding: 0 0 0.5em 0;
   font-style: italic;
 }
 
 input {
-  padding: 1em;
-  margin-bottom: 2.25em;
+  padding: 0.6em;
+  margin-bottom: 1.8em;
+  height: 45px;
 }
 
 .input-wrapper {
@@ -39,7 +50,19 @@ input {
   width: 100%;
 }
 
+.two-third {
+  flex: 2
+}
+
+.one-third {
+  flex: 1;
+  margin-right: 1.2em;
+}
+
 .side-by-side {
   display: flex;
-  justify-content: space-between;
+}
+
+.side-by-side div:last-child input {
+  width: 100%;
 }
