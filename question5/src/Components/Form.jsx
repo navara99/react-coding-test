@@ -9,8 +9,16 @@ function Form() {
     setWord(e.target.value);
   };
 
-  const handleSubmission = (e) => {
+  const handleSubmission = async (e) => {
     e.preventDefault();
+    try {
+      const data = await fetch(`https://api.datamuse.com/words?rel_rhy=${word}`);
+      const words = await data.json();
+      console.log(words);
+    } catch (e) {
+      console.log(e.message);
+    };
+
   };
 
   return (
