@@ -33,14 +33,16 @@ server_echo.forEach(
 
 /********* Answer *********/
 
-// There are a 2 things wrong with the code
+// There are a a few things wrong with the code
 
 // 1. In lines 1 and 2, var is being used to declare variables instead of let and const. As of ES6, let and const
 // are preferred to avoid scoping related bugs
 
-// 2. On line 21, response.json().echo will return undefined since the original json we sent does not have an echo
-// property. Therefore line 30 will throw an error since we cant iterate over undefined. Also,
-// line 22 will also throw an error because the promise has already been resolved in line 21. 
+// 2. On line 21, response.json().echo will return undefined for 2 reasons. Firstly, .json method is
+// asynchronous, so it needs to be returned and chained with a then method to actually 
+// read the value. Secondly, even if the value was already there, the original json we sent does not have an echo
+// property. Therefore line 30 will also throw an error since we cant iterate over undefined. Also,
+// line 22 will throw an error because the promise has already been consumed in line 21. 
 
 
 
