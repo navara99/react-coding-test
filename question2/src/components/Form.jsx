@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import $ from "jquery";
+import "jquery-ui-dist/jquery-ui";
 import "./form.css"
+import { useEffect } from "react";
+import { formatDate } from "./helper";
 
 function Form() {
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    $(function () {
+      $("#birthday").datepicker().on("input change", function (e) {
+        const formattedDate = formatDate(e.target.value);
+        setDate(formattedDate);
+      });
+    });
+  }, []);
 
   return (
     <form>
@@ -10,11 +24,11 @@ function Form() {
       <div className="side-by-side">
         <div className="input-wrapper one-third">
           <label for="birthday">Date of Birth</label>
-          <input type="date" id="birthday" name="birthday"></input>
+          <input type="text" value={date} readOnly id="birthday" name="birthday"></input>
         </div>
         <div className="input-wrapper two-third">
           <label for="country">Country of residence or citizenship:</label>
-          <input type="text" id="country" name="country" className="two-thirds"></input>
+          <input type="text" id="country" name="country"></input>
         </div>
       </div>
       <label for="school">What school do you plan to attend?</label>
