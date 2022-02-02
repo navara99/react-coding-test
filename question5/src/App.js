@@ -1,9 +1,11 @@
 import './App.css';
+import Form from './Components/Form';
 
 function App() {
   return (
     <div className="App">
-      Hello
+      <h2>Words that Rhyme</h2>
+      <Form />
     </div>
   );
 }
