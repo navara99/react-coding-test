@@ -1,3 +1,7 @@
+# Working Solution
+
+![Working Solution](./docs/working-solution.gif)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
