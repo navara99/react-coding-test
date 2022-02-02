@@ -22,11 +22,14 @@ function Form() {
       <label for="full-name">Your full given name:</label>
       <input type="text" id="full-name" name="full-name" className="fullwidth"></input>
       <div className="side-by-side">
-        <div className="input-wrapper one-third">
+        <div className="input-wrapper left-input">
           <label for="birthday">Date of Birth</label>
-          <input type="text" value={date} readOnly id="birthday" name="birthday"></input>
+          <div className="icon-wrapper">
+            <i className="fa fa-calendar" aria-hidden="true"></i>
+            <input type="text" value={date} readOnly id="birthday" name="birthday"></input>
+          </div>
         </div>
-        <div className="input-wrapper two-third">
+        <div className="input-wrapper right-input">
           <label for="country">Country of residence or citizenship:</label>
           <input type="text" id="country" name="country"></input>
         </div>
